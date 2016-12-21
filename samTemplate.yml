@@ -13,3 +13,14 @@ Resources:
           Properties:
             Path: /TimeResource
             Method: GET
+  ListFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: second.list
+      Runtime: nodejs4.3
+      Events:
+        MyTimeApi:
+          Type: Api
+          Properties:
+            Path: /list
+            Method: POST
